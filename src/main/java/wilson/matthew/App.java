@@ -12,10 +12,21 @@ public class App
 
     static void addAndPrintNumbers(InputStream in, PrintStream out) {
         Scanner reader = new Scanner(in);
-        out.print("Type a number: ");
+
+        out.print("Type a positive number: ");
         int firstNumber = Integer.parseInt(reader.nextLine());
-        out.print("Type another number: ");
+        if (firstNumber < 0) {
+            out.print("Number has to be positive");
+            return;
+        }
+
+        out.print("Type another positive number: ");
         int secondNumber = Integer.parseInt(reader.nextLine());
+        if (secondNumber < 0) {
+            out.print("Number has to be positive");
+            return;
+        }
+
         out.println();
         out.print("Sum of the numbers: " + (firstNumber + secondNumber));
     }
