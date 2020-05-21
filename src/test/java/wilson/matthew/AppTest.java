@@ -15,7 +15,7 @@ public class AppTest {
     ByteArrayInputStream in;
 
     @Test
-    public void TestSuccess() {
+    public void testSuccess() {
         in = new ByteArrayInputStream(("6" + System.lineSeparator()
                 + "2").getBytes());
         App.addAndPrintNumbers(in, out);
@@ -31,7 +31,7 @@ public class AppTest {
     }
 
     @Test
-    public void TestFailure() {
+    public void testFailure() {
         in = new ByteArrayInputStream(("-5" + System.lineSeparator() + "7").getBytes());
         App.addAndPrintNumbers(in, out);
         assertEquals("Type a positive number: Number has to be positive", outContent.toString());
